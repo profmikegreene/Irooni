@@ -1,0 +1,18 @@
+/*   
+Theme Name: Irooni
+Theme URI: http://newhorizons.vccs.edu
+Description: Irooni 2013 Wordpress theme for VCCS New Horizons website. Based on HTML5 Reset Wordpress theme and HTML5 Boilerplate
+Author: Michael Greene
+Author URI: http://profmikegreene.com
+Version: 1.0.0
+*/
+
+/* Files concatonated by the build script */
+@import "css/html5reset.css";
+@import "css/primary.css";
+@import "css/global-nav.css";
+@import "css/wp-helper.css";
+@import "css/front-page.css";
+@import "css/page.css";
+@import "css/responsive.css";
+@import "css/print.css";

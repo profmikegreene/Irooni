@@ -1,0 +1,497 @@
+/* ==================================================================
+*
+*   Standard page styles
+*
+* -----------------------------------------------------------------*/
+.page .feature_and_announcements .container {
+  height:auto;
+}
+.pageContent, .pageSidebar {
+	background:#fff;
+	position: relative;
+}
+.pageContent article {
+	margin: 0 10px;
+}
+.pageContent .entry-header {
+  position: absolute;
+  top:-160px;
+  color:#fff;
+}
+.entry-title {
+	font: 400 2.8em/2em 'Oswald', Impact, Arial, sans-serif;
+	margin: 0;
+  color:#fff;
+}
+.pageContent .entry-content {
+  position: relative;
+  padding-top: 10px;
+}
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  margin:1.4em 0 .4em;
+}
+.tight,
+h2.tight {
+  margin: .4em 0 0;
+}
+.entry-content h5,
+.entry-content h6 {
+  font-family: "Segoe UI Light","helvetica neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.entry-content p {
+  margin-top:0;
+}
+.entry-content li {
+  font-size: 1.25em;
+  line-height: 1.4em;
+}
+.entry-content .callout {
+  background:#eee;
+  border:2px dashed #ddd;
+  text-align: center;
+}
+.entry-content .callout h3 {
+  margin:.4em 0;
+}
+/* ==================================================================
+*
+*   Breadcrumbs
+*
+* -----------------------------------------------------------------*/
+.breadcrumbs{
+  overflow: hidden;
+  width: 700px;
+  margin: 0;
+  padding-left: 2px;
+  list-style: none;
+  position: relative;
+  top:35px;
+  background:#fff;
+  background: rgba(255,255,255,0.5);
+}
+.page-template-session-list-template-php .breadcrumbs {
+  top:100px;
+}
+.breadcrumbs li{
+  float: left;
+  margin: 0;
+  height:40px;
+}
+
+.breadcrumbs a, .breadcrumbs span{
+  margin:5px;
+  float: left;
+  height:30px;
+  line-height: 30px;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  padding:0 3px;
+}
+.breadcrumbs span {
+	margin-left: 0px;
+  padding:0;
+}
+.breadcrumbs a:hover{
+  background: #00539B;
+  border:none;
+  color: #fff;
+}
+.breadcrumbs a.current:hover {
+	background: none;
+	color:#444;
+}
+
+/* ==================================================================
+*
+*   sidebar
+*
+* -----------------------------------------------------------------*/
+.pageSidebar {
+  background:none;
+}
+.page_v2 .pageSidebar {
+  top:0;
+}
+.pageSidebar .widget {
+  background: #fff;
+  padding:0;
+  margin: 0 0 20px;
+}
+
+.pageSidebar .widget div {
+  padding: 5px;
+}
+.pageSidebar .promo {
+  background:#e98505;
+  color:#fff;
+}
+.pageSidebar .promo a {
+  color:#fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+
+.pageSidebar .promo h3 {
+  background:#975502;
+  color:#fff;
+}
+.pageSidebar .apply .menu a:hover {
+  color:#0073cf;
+}
+.pageSidebar .sidebarMenu {
+  padding:0;
+}
+.pageSidebar h3 {
+  color:#00539B;
+  padding-left: 5px;
+  margin: 0;
+}
+
+.pageSidebar .menu, .pageSidebar .sub-menu {
+  margin: 0;
+  padding:0;
+}
+
+.pageSidebar .tweets,
+.pageSidebar .tweets li,
+.pageSidebar .menu li {
+  list-style: none;
+  padding:0;
+  margin: 0;
+}
+
+.pageSidebar .menu a {
+  display: block;
+  padding:5px;
+  text-decoration: none;
+  border-bottom:1px solid #e5f1fa;
+}
+.pageSidebar .widget a:hover {
+  background:#f9f9f9;
+  color:#0073cf;
+  text-decoration: none;
+  border-color:#68ade7;
+}
+.pageSidebar .promo a:hover {
+  border-bottom:1px dashed #fff;
+  background:none;
+}
+.pageSidebar .sub-menu a{
+  padding-left:10px;
+}
+.pageSidebar .sub-menu .sub-menu a  {
+  padding-left: 20px;
+}
+.widget_twitter ul {
+  padding-left: 0;
+}
+.widget_twitter li {
+  list-style: none;
+  margin-bottom: 9px;
+  padding-bottom: 10px;
+  border-bottom:1px dashed #00539B;
+}
+/* ==================================================================
+*
+*   Session View
+*
+* -----------------------------------------------------------------*/
+.session-views {
+  width:800px;
+}
+/* ==================================================================
+*
+*   Sessions List
+*
+* -----------------------------------------------------------------*/
+
+.controlForm {
+  position: relative;
+}
+.controlForm label {
+  color:#fff;
+}
+.pageContent .sessions {
+  margin: .5em 10px 1.5em;
+}
+.sessions p {
+  margin:0;
+}
+.page-template-session-list-template-php .postform {
+  position: relative;
+}
+.page-template-session-list-template-php .controlForm select {
+  margin-bottom: 5px;
+}
+.page-template-session-list-template-php .feature_and_announcements .button {
+  padding:5px 10px;
+  left:-5px;
+  top:5px;
+  position: relative;
+  display: block;
+}
+.session-count {
+  margin:0 10px;
+  font-style: italic;
+}
+.postContent .entry-title {
+  color:#222;
+  font-size:2em;
+}
+.session-header h3 {
+  margin-bottom:0;
+}
+.session-header .category {
+  font-size:.5em;
+  font-family: "Segoe UI Light", "Segoe UI", "helvetica neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  top:-5px;
+}
+
+/* ==================================================================
+*
+*   Sessions Single
+*
+* -----------------------------------------------------------------*/
+.single-sessions .mainContainer {
+  top:50px;
+  margin-bottom:50px;
+}
+.single-sessions .back-to-list {
+  margin:30px 0 11px;
+  font-size:1.5em;
+  display: inline-block;
+  width:auto;
+  height: 30px;
+}
+.single-sessions .back-to-list:hover {
+  margin-bottom: 10px;
+}
+.session-single .entry-header {
+  position: relative;
+  top:auto;
+  color:#222;
+}
+.session-single .entry-title {
+  color:#454545;
+  line-height: 1.25em;
+  font-size:2.5em;
+}
+.session-single .session-sentence {
+  font-style: italic;
+}
+.session-single .wp-post-image {
+  border-radius: 5px;
+  box-shadow: 0 2px 3px #aaa;
+  margin-bottom: 1.4em;
+}
+.session-single p {
+  margin:0 0 1.4em;
+}
+.session-single {
+  border-right: 1px solid #e6e6e6;
+  margin-right:9px;
+}
+.sessionContent {
+  padding-right:20px;
+}
+.sessionContent .separator{
+  border-bottom:1px solid #e6e6e6;
+}
+.session-details, .presenter-details {
+  position: relative;
+  margin-bottom:1.5em;
+}
+.session-embed {
+  position: relative;
+  padding-bottom: 56.25%; /* 16/9 ratio */
+  padding-top: 30px; /* IE6 workaround*/
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+}
+.session-embed iframe,
+.session-embed object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.session-sidebar h2 {
+  margin:0;
+}
+.session-sidebar p {
+  margin: .5em 0 0;
+  clear: left;
+}
+.session-sidebar span {
+  display: block;
+  position: relative;
+  float: left;
+}
+.session-sidebar .label {
+  width:110px;
+  font-weight: 700;
+  height:30px;
+}
+.session-sidebar .presenter {
+  height:50px;
+}
+.session-sidebar .twitter {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.session-sidebar .category {
+  margin-left: 0;
+  padding:2px 3px;
+}
+.button.csv-importer {
+  border: 1px solid #2F5BB7;
+  background-color: #357AE8;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#357ae8));
+  background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+  background-image: -moz-linear-gradient(top,#4d90fe,#357ae8);
+  background-image: -ms-linear-gradient(top,#4d90fe,#357ae8);
+  background-image: -o-linear-gradient(top,#4d90fe,#357ae8);
+  background-image: linear-gradient(top,#4d90fe,#357ae8);
+}
+.button.csv-importer:hover {
+  border: 1px solid #2F5BB7;
+  background-color: #0073cf;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#0073cf));
+  background-image: -webkit-linear-gradient(top,#4d90fe,#0073cf);
+  background-image: -moz-linear-gradient(top,#4d90fe,#0073cf);
+  background-image: -ms-linear-gradient(top,#4d90fe,#0073cf);
+  background-image: -o-linear-gradient(top,#4d90fe,#0073cf);
+  background-image: linear-gradient(top,#4d90fe,#0073cf);
+  border:1px solid #2f5bb7;
+}
+.button.blackboard{
+  border:1px solid #a05720;
+  background:#f28b37;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#fe953e),to(#f28b37));
+  background-image: -webkit-linear-gradient(top,#fe953e,#f28b37);
+  background-image: -moz-linear-gradient(top,#fe953e,#f28b37);
+  background-image: -ms-linear-gradient(top,#fe953e,#f28b37);
+  background-image: -o-linear-gradient(top,#fe953e,#f28b37);
+  background-image: linear-gradient(top,#fe953e,#f28b37);
+}
+.button.blackboard:hover {
+  border:1px solid #a05720;
+  background:#d9772d;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#fe953e),to(#d9772d));
+  background-image: -webkit-linear-gradient(top,#fe953e,#d9772d);
+  background-image: -moz-linear-gradient(top,#fe953e,#d9772d);
+  background-image: -ms-linear-gradient(top,#fe953e,#d9772d);
+  background-image: -o-linear-gradient(top,#fe953e,#d9772d);
+  background-image: linear-gradient(top,#fe953e,#d9772d);
+}
+
+/* ==================================================================
+*
+*   Session Grid
+*
+* -----------------------------------------------------------------*/
+.cf:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .cf {
+  zoom: 1;
+}
+*:first-child+html .cf {
+  zoom: 1;
+}
+.session-grid-table {
+  width: 98%;
+  margin:0 1%;
+  font-size: .9em;
+  line-height: 1.25em;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.session-grid-table th,
+.session-grid-table td {
+  margin: 0;
+  padding: 0.4166em;
+  vertical-align: top;
+  border: 1px solid #babcbf;
+  background: #fff;
+  }
+.session-grid-table th {
+  text-align: left;
+  background: #fff2b2;
+}
+.session-grid-table .weds {
+  background:#fff2b2;
+}
+.session-grid-table .thurs {
+  background: #efe2a7;
+}
+.session-grid-table .fri {
+  background:#e0d49d;
+}
+
+
+.error {
+  color:red;
+}
+
+.session-grid-table a {
+  display: block;
+  width:100%;
+  height:100%;
+  color:#000;
+}
+.session-grid-table td a:hover {
+  color:#000;
+  text-decoration: none;
+  border:none;
+}
+.session-grid-table .blackboard {
+  background:#eab200;
+}
+.session-grid-table .technology {
+  background:#eab200;
+}
+.session-grid-table .teachingLearning {
+  background:#eab200;
+}
+.session-grid-table .pedagogy {
+  background:#eab200;
+}
+.session-grid-table .professionalDevelopment {
+  background:#eab200;
+}
+.session-grid-table .opportunity {
+  background:#eab200;
+}
+.session-grid-table .movingForward {
+  background:#eab200;
+}
+.session-grid-table .blackboard {
+  background:#eab200;
+}
+.session-grid-table .blackboard {
+  background:#eab200;
+}
+.session-grid-table .blackboard:hover {
+  background:#f0c94c;
+}
+.session-grid-table .csv-importer {
+  background:#0073cf;
+}
+

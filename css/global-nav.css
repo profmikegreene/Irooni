@@ -1,0 +1,180 @@
+.globalNav {
+	font-size:1.25em; 
+	font-weight:300; 
+	position:fixed; 
+	z-index:98; 
+	height:60px; 
+	width:100%;
+	color:#333333;
+	padding:0;
+	letter-spacing:1px;
+	top:0px;
+	border-top:5px solid #00539B;
+	background: #fff;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.6);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,.6);
+	-ms-box-shadow: 0 0 5px rgba(0,0,0,.6);
+	-o-box-shadow: 0 0 5px rgba(0,0,0,.6);
+	box-shadow: 0 0 5px rgba(0,0,0,.6);
+}
+.globalNav .logo {
+	height:60px;
+	margin-right:20px;
+}
+
+.admin-bar .globalNav {top:28px;}
+.globalNav a {
+	text-shadow:none; 
+	color:#00539B; 
+	text-decoration: none;
+}
+
+.globalNav a:hover {
+	color:#00539b; 
+	text-decoration:none; 
+	border-bottom:none;
+}
+
+.globalNav li {list-style: none;}
+.nav, .logo, .sessionGrid {position:relative; float:left;}
+
+.globalNav .sessionGrid {
+	top:18px;
+	color: #fff;
+	margin-right: 20px;
+}
+
+.nav {
+	height:60px;
+	line-height:60px;
+	z-index:99;
+}
+.nav h3 {
+	position:relative;
+	display:none;
+	cursor: pointer;
+	color:#fff;
+	width:200px;
+	background:#232323;
+	/*border:1px solid #222;*/
+	padding:3px;
+	margin: 0 auto;
+}
+.nav h3 span {
+	float:right;
+}
+.globalNav .menu {
+	position:relative; 
+	top:0; 
+	
+	height:40px;
+	margin:0 ; 
+	padding:0;
+}
+.globalNav .menu ul, .globalNav .menu ol {
+	padding:0;
+}
+.globalNav .menu li {
+	border:none;
+	position:relative;
+	float:left;
+	display:block;
+	margin:0;
+	padding:0;
+	font-weight:100;
+	text-align:left;
+	width:auto;
+	}
+.globalNav .menu a {
+	display: block;
+	padding:0 15px;
+}
+.globalNav .menu a:hover,
+.globalNav .menu a:focus {
+	background:#e6e6e6;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	padding: 0 14px;
+}
+.globalNav .menu .topLevel:hover, .globalNav .menu .topLevel:focus, .globalNav a.active{
+	color:#fff;
+	text-decoration:none;
+	}
+
+.globalNav .dropdownArrow {
+	font-size: .4em;
+	position:absolute;
+	left:38%;
+	bottom:-15px;
+}
+.globalNav .topLevel {
+	z-index:100;
+	position:relative;
+	display:block;
+	text-align:left;
+	line-height:inherit;
+	float:left;
+	padding-right:5px;
+	text-decoration:none;
+	color: #fff;
+	font-size:1.4em;
+}
+.globalNav .sub-menu {
+	position:absolute;
+	z-index:99;
+	display:none;
+	top:40px;
+	background: #fff;
+	border:1px solid #ccc;
+	letter-spacing: 0;
+	padding:0;
+}
+.globalNav .sub-menu ul {
+	width: 190px;
+	display: block;
+	position: relative;
+	float: left;
+	margin-right:5px;
+}
+.globalNav .sub-menu li, .globalNav .sub-menu li a{
+	float:none;
+	display:block;
+}
+
+
+.globalNav .sub-menu a {
+	text-transform:none;
+	font-weight: 300;
+	color:#00539B;
+	line-height:1.5em;
+	font-size:1em;
+	display: block;
+	width: 185px;
+	padding:5px;
+}
+.globalNav .sub-menu a:hover {
+	text-decoration:none;
+	color:#00539B;
+	border:none;
+	padding:5px;
+}
+.globalNav .active {
+	background:inherit;
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	-o-box-shadow:none;
+	color:#fff;
+
+}
+
+.conferenceInfo {
+	font-size: .65em;
+	float: right;
+}
+.navBuffer {
+	height:60px;
+	position: relative;
+}
+
+

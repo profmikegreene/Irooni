@@ -1,0 +1,163 @@
+/* ==================================================================
+*
+*   General Layout
+*
+* -----------------------------------------------------------------*/
+.mainContainer {
+	padding-top: 0;
+	background: none;
+}
+ .entry {
+	margin: 0 auto;
+}
+
+
+/* ==================================================================
+*
+*   Feature
+*
+* -----------------------------------------------------------------*/
+.feature_and_announcements {
+	background: #fff url(/wp-content/themes/Irooni/images/blurredBkg.jpg) center no-repeat;
+	padding: 60px 0;
+	border-bottom:1px solid #e6e6e6;
+	height:80px;
+}
+.page-template-conference-home-page-php .feature_and_announcements {
+	height: 220px;
+}
+.feature, .caption, .callToAction {
+	float: left;
+	position: relative;
+}
+.feature {
+	width:640px;
+}
+.feature h1 {
+	color:#fff;
+	font: 300 2.75em/2em 'Oswald', Impact;
+}
+.callToAction {
+	width:300px;
+	height:360px;
+	padding:0;
+}
+.callToAction .button {
+	top:60px;
+	position: relative;
+	font-size: 1.5em;
+	margin:0 20px;
+}
+.callToAction .button:hover {
+}
+.caption {
+	width:300px;
+	height:360px;
+	background:#f9f9f9;
+	padding:0;
+}
+.caption h1 {
+	margin:0;
+}
+.caption a {
+	display:block;
+	color:#222;
+	font-size: 1.4em;
+	border-bottom: 1px solid #e6e6e6;
+	padding:10px;
+	height:51px;
+	line-height: 1.4em;
+}
+.caption a:hover {
+	background:#e6e6e6;
+}
+.fadeIn {
+	color:#fff;
+	display: none;
+	position: absolute;
+	
+}
+.fadeIn.alpha {
+	display: block;
+}
+/* ==================================================================
+*
+*   Main Content
+*
+* -----------------------------------------------------------------*/
+.main_content {
+	padding-top: 30px;
+}
+.qrc {
+	width:100%;
+}
+/* ==================================================================
+*
+*   Events, Tweets, and Photos
+*
+* -----------------------------------------------------------------*/
+.events_tweets_and_photos {
+	padding: 60px 0;
+}
+
+
+.tweets ol, .tweets ul {
+	border: none;
+	list-style: none;
+	padding:0;
+}
+.tweets li {
+	margin-bottom:1em;
+}
+.avatar{
+	display: inline-block;
+}
+.photos img {
+	margin:5px;
+}
+
+/* ==================================================================
+*
+*   Tag Cloud
+*
+* -----------------------------------------------------------------*/
+.tag_cloud {
+	background:#00539B;
+	padding:60px 0;
+	text-align: center;
+}
+.tag_cloud a {
+	color:#fff;
+	line-height: 1em;
+	padding:0 5px;
+}
+.tag_cloud a:hover {
+	border-color:#fff;
+}
+.tag_cloud h3 {
+	color:#fff;
+}
+
+/* ==================================================================
+*
+*   Vendor Cloud
+*
+* -----------------------------------------------------------------*/
+.vendor_cloud {
+	background:#fff;
+}
+.vendor_cloud img {
+	margin:10px;
+}
+
+/* ==================================================================
+*
+*   Footer
+*
+* -----------------------------------------------------------------*/
+ .footer {
+	bottom:-75px;
+}
+ .name {
+	font-family: 'Arvo', Helvietica Neue, Arial, sans-serif;
+}

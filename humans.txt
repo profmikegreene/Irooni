@@ -1,0 +1,28 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Web Solutions Specialist: Michael Greene
+  Site: profmikegreene.com
+  Twitter: profmikegreene
+  Location: Tappahannock, VA
+
+
+/* THANKS */
+  Names (& URL): Dave Morales, Nancy Harris, Jen Switzer, Ruth Greene, Jackie Smith
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software: Wordpress
+
+/* To-Do */
+  Responsive Select Menu WP Plugin: adjusted the loadAssets function to load in wp_footer
+    instead of wp_head in order to correctly load after jQuery. **More reliable to just
+    load jQuery in head**
+
+  Grab post_id's from all sessions with custom code and use them for qr code generation, they
+    redirect to the appropriate permalink
+
+  Create apple-icon.png

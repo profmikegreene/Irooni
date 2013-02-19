@@ -1,0 +1,74 @@
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+table th { font-weight: bold; }
+table td, table th {
+	padding: 5px;
+	text-align: left;
+	border:1px solid #666;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+
+	table.session-grid {
+		margin:0;
+	}
+	.session-grid td,
+	.session-grid th,
+	.session-grid tr,
+	.pinned td,
+	.pinned th,
+	.pinned tr {
+		min-height:100px;
+	}
+	.pinned {
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: #fff;
+		width: 85px;
+		overflow: hidden;
+		overflow-x: scroll;
+		/*border-right:1px solid #666;*/
+
+		}
+	.pinned table {
+		width: 100%;
+		margin:0;
+	}
+	.pinned table th,
+	.pinned table td {
+		white-space: nowrap;
+	}
+	.pinned td:last-child { border: 0; }
+
+	div.table-wrapper {
+		position: relative;
+		margin-bottom: 20px;
+		border-right: 1px solid #ccc;
+	}
+	div.table-wrapper div.scrollable table {
+		margin-left: 85px;
+	}
+	div.table-wrapper div.scrollable {
+		overflow: scroll;
+		overflow-y: hidden;
+	}
+	table.session-grid td, table.session-grid th {
+		position: relative;
+		/*white-space: nowrap;*/
+		overflow: hidden;
+		width:140px;
+		height:100px;
+	}
+	table.session-grid a {
+		width:auto;
+	}
+	table.session-grid th:first-child,
+	table.session-grid td:first-child,
+	table.session-grid td:first-child,
+	table.session-grid.pinned td {
+		display: none;
+	}
+}
+

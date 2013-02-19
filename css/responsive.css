@@ -1,0 +1,452 @@
+/* ==================================================================
+*
+*   Breakpoints for Responsive Design
+*  	Large Desktop:	1300px+
+*		Small Desktop:	1024-1300px
+*		Tablet:					720px-1024px
+*   Mobile:         <720px
+*
+* -----------------------------------------------------------------*/
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Containers
+  ----------------------------------------------------------------------------------------------------*/
+  .container {
+      width: 720px;
+  }
+
+  /* `Grid >> 12 Columns
+  ----------------------------------------------------------------------------------------------------*/
+   
+  .container .grid_1 {
+    width: 40px;
+  }
+   
+  .container .grid_2 {
+    width: 100px;
+  }
+  .container .grid_25 {
+    width:130px;
+  }
+  .container .grid_3 {
+    width: 160px;
+  }
+   
+  .container .grid_4 {
+    width: 220px;
+  }
+   
+  .container .grid_5 {
+    width: 280px;
+  }
+   
+  .container .grid_6 {
+    width: 340px;
+  }
+   
+  .container .grid_7 {
+    width: 400px;
+  }
+   
+  .container .grid_8 {
+    width: 460px;
+  }
+   
+  .container .grid_9 {
+    width: 520px;
+  }
+   
+  .container .grid_10 {
+    width: 580px;
+  }
+   
+  .container .grid_11 {
+    width: 640px;
+  }
+   
+  .container .grid_12 {
+    width: 700px;
+  }
+  .container .push_1 {
+    left: 60px;
+  }
+
+  .container .push_2 {
+    left: 120px;
+  }
+
+  .container .push_3 {
+    left: 180px;
+  }
+
+  .container .push_4 {
+    left: 240px;
+  }
+
+  .container .push_5 {
+    left: 300px;
+  }
+
+  .container .push_6 {
+    left: 360px;
+  }
+
+  .container .push_7 {
+    left: 420px;
+  }
+
+  .container .push_8 {
+    left: 480px;
+  }
+
+  .container .push_9 {
+    left: 540px;
+  }
+
+  .container .push_10 {
+    left: 600px;
+  }
+
+  .container .push_11 {
+    left: 660px;
+  }
+
+  .container .pull_1 {
+    left: -60px;
+  }
+
+  .container .pull_2 {
+    left: -120px;
+  }
+
+  .container .pull_3 {
+    left: -180px;
+  }
+
+  .container .pull_4 {
+    left: -240px;
+  }
+
+  .container .pull_5 {
+    left: -300px;
+  }
+
+  .container .pull_6 {
+    left: -360px;
+  }
+
+  .container .pull_7 {
+    left: -420px;
+  }
+
+  .container .pull_8 {
+    left: -480px;
+  }
+
+  .container .pull_9 {
+    left: -540px;
+  }
+
+  .container .pull_10 {
+    left: -600px;
+  }
+
+  .container .pull_11 {
+    left: -660px;
+  }
+  /* ==================================================================
+  *
+  *   Navigation
+  *
+  * -----------------------------------------------------------------*/
+  .nav {
+    width:448px;
+  }
+  .globalNav .logo {
+    margin-right: 10px;
+    height:50px;
+    padding-top: 5px;
+  }
+  .globalNav .menu a {
+    padding: 0 7px;
+  }
+   .globalNav .menu a:hover {
+    padding:0 6px;
+   }
+   .globalNav .sub-menu a:hover {
+    padding:0 7px;
+   }
+  .conferenceInfo {
+    margin-left: 0px;
+  }
+  /* ==================================================================
+  *
+  *   Front Page
+  *
+  * -----------------------------------------------------------------*/
+  .callToAction .button {
+    float:none;
+    display: block;
+    margin-bottom: 20px;
+  }
+  /* ==================================================================
+  *
+  *   Session Single
+  *
+  * -----------------------------------------------------------------*/
+  .session-details {
+    padding:0;
+    font-size: .85em;
+  }
+  .session-single .wp-post-image {
+    width:100%;
+    height: auto;
+  }
+
+  /* ==================================================================
+  *
+  *   Session List
+  *
+  * -----------------------------------------------------------------*/
+  .page-template-session-list-template-php .controlForm {
+    top:-40px;
+  }
+
+  .session-views {
+    width:600px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body {
+    background-position-y: 0;
+    /*overflow-x: hidden;*/
+  }
+  .container {
+    width:100%;
+  }
+  .container .grid_1,
+  .container .grid_2,
+  .container .grid_25,
+  .container .grid_3,
+  .container .grid_4,
+  .container .grid_5,
+  .container .grid_6,
+  .container .grid_7,
+  .container .grid_8,
+  .container .grid_9,
+  .container .grid_10,
+  .container .grid_11,
+  .container .grid_12{
+    width: 98%;
+    margin-left:1%;
+    margin-right:1%
+  }
+  .container .push_1,
+  .container .push_2,
+  .container .push_3,
+  .container .push_4,
+  .container .push_5,
+  .container .push_6,
+  .container .push_7,
+  .container .push_8,
+  .container .push_9,
+  .container .push_10,
+  .container .push_11,
+  .container .pull_1,
+  .container .pull_2,
+  .container .pull_3,
+  .container .pull_4,
+  .container .pull_5,
+  .container .pull_6,
+  .container .pull_7,
+  .container .pull_8,
+  .container .pull_9,
+  .container .pull_10,
+  .container .pull_11 {
+    left:0;
+  }
+  /* ==================================================================
+  *
+  *   Navigation
+  *
+  * -----------------------------------------------------------------*/
+  .globalNav,
+  .nav,
+  .conferenceInfo,
+  .navBuffer {
+    height:35px;
+    line-height: 35px;
+  }
+  .logo, .nav, .conferenceInfo {
+    margin:0;
+    padding:0;
+  }
+  .logo {
+    display: none;
+  }
+  .nav {
+    width:55%;
+  }
+  .conferenceInfo {
+    width:40%;
+    float:left;
+    margin-left:5%;
+  }
+  .conferenceInfo p{
+    margin:0;
+  }
+  /* ==================================================================
+  *
+  *   Page Styles
+  *
+  * -----------------------------------------------------------------*/
+  .breadcrumbs {
+    width:100%;
+  }
+  /* ==================================================================
+  *
+  *   Front Page
+  *
+  * -----------------------------------------------------------------*/
+  .page-template-conference-home-page-php section {
+    padding:10px;
+  }
+  .page-template-conference-home-page-php .feature_and_announcements {
+    height:260px;
+  }
+  .callToAction{
+    top:160px;
+    height:auto;
+  }
+  .page-template-conference-home-page-php .qrc {
+    width:50%;
+  }
+  .page-template-conference-home-page-php .feature h1 {
+    line-height: 1.25em;
+  }
+  /* ==================================================================
+  *
+  *   Session List
+  *
+  * -----------------------------------------------------------------*/
+  .page-template-session-list-template-php .controlForm {
+    top:-30px;
+  }
+  .page-template-session-list-template-php .postform {
+    left:auto;
+  }
+  .page-template-session-list-template-php .entry-header {
+    left:0;
+    top:-240px;
+  }
+  .page-template-session-list-template-php .controlForm .audience {
+    left:42px;
+    position: relative;
+    display: block;
+  }
+  .page-template-session-list-template-php .feature_and_announcements {
+    height:120px;
+  }
+  .page-template-session-list-template-php .breadcrumbs {
+    top:140px;
+  }
+  .page-template-session-list-template-php .entry-header {
+    
+  }
+  /* ==================================================================
+  *
+  *   Session Single
+  *
+  * -----------------------------------------------------------------*/
+  .single-sessions .mainContainer {
+    top:20px;
+  }
+  .session-single .wp-post-image {
+    width:100%;
+    height: auto;
+  }
+  /* ==================================================================
+  *
+  *   Session Grid
+  *
+  * -----------------------------------------------------------------*/
+  .session-grid-table {
+    display: block;
+    position: relative;
+    width: 100%;
+    -webkit-overflow-scrolling:touch;
+  }
+  .session-grid-table thead {
+    display: block;
+    float: left;
+
+  }
+  .session-grid-table tbody {
+    display: block;
+    width: auto;
+    position: relative;
+    overflow: scroll;
+    overflow-y:hidden;
+    white-space: nowrap;
+
+  }
+  .session-grid-table thead tr {
+    display: block;
+  }
+  .session-grid-table thead th {
+    width:60px;
+  }
+  .session-grid-table th {
+    display: block;
+    height:28px;
+  }
+  .session-grid-table .blank,
+  .session-grid-table tbody th {
+    height:15px;
+  }
+  .session-grid-table tbody tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .session-grid-table td {
+    display: block;
+    min-height: 28px;
+    width:240px;
+    height:28px;
+  }
+  .session-grid-table td a{
+    width:230px;
+    white-space: normal;
+  }
+
+  .session-grid-table th {
+    border-bottom: 0;
+    border-right:0;
+  }
+  .session-grid-table td {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  .session-grid-table tbody tr {
+    border-right: 1px solid #babcbf;
+  }
+  .session-grid-table th:last-child,
+  .session-grid-table td:last-child {
+  border-bottom: 1px solid #babcbf;
+  }
+
+  /* ==================================================================
+  *
+  *   Footer
+  *
+  * -----------------------------------------------------------------*/
+  .footer ul {
+    width:100%;
+  }
+  .footer li {
+    width:50%;
+  }
+
+}

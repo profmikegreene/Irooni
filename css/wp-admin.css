@@ -1,0 +1,12 @@
+
+.login h1 a { 
+	background-image: url('/wp-content/themes/Irooni/images/VCC-Logo-noTag.gif') !important; 
+	margin-bottom: 05px; 
+	background-size: 209px 91px;
+	height: 85px;
+	
+}
+.session-details-title {
+	width:160px;
+}
+
