@@ -3,12 +3,15 @@
  /*Template Name: Concurrent Session List/Archive
 
  */
-
 get_header(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 <section class="feature_and_announcements">
     <div class="container">
-        <div class="grid_9 pageHeader">
-    <?php   profmg_breadcrumb(); ?>
+        <div class="grid_9">
+            <header class="entry-header">
+                <h1 class="entry-title"><?php the_title(); ?></h1>
+            </header><!-- .entry-header -->
+            <?php   profmg_breadcrumb(); ?>
         </div>
         <div class="grid_3">
             <form method="post" name="controlForm" action="#" id="controlForm" class="controlForm">
@@ -61,7 +64,7 @@ get_header(); ?>
 <div id="mainContainer" class="container mainContainer">
     <div id="content" class="grid_9" role="main">
         <div class="postContent" id="pageContent">
-        <?php while ( have_posts() ) : the_post(); ?>
+       
 
         <?php get_template_part( 'content', 'page' ); ?>
 

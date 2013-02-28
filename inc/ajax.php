@@ -1,6 +1,6 @@
 <?php
-//require( $_SERVER['DOCUMENT_ROOT'].'/wp-load.php' );
-require( '/Users/mgreene/Dropbox/Dev/svn/trunk/www.wp.dev/wp-load.php' );
+require( $_SERVER['DOCUMENT_ROOT'].'/wp/wp-load.php' );
+// require( '/Users/mgreene/Dropbox/Dev/svn/trunk/www.wp.dev/wp-load.php' );
 
 	$sortBy   = ISSET($sortBy) ? NULL : $_POST['sortBy'];
 	$room     = ISSET($room) ? NULL :$_POST['room'];
@@ -8,8 +8,6 @@ require( '/Users/mgreene/Dropbox/Dev/svn/trunk/www.wp.dev/wp-load.php' );
 	// $audience = ISSET($audience) ? NULL: $_POST['audience'];
 	$blogID		= ISSET($blogID) ? NULL : $_POST['blogID'];
 	// $audience_level = ISSET($audience_level) ?NULL : 'audience_';
-
-	
 
 	$args= array(
        'post_type'=>'sessions',
@@ -48,11 +46,18 @@ require( '/Users/mgreene/Dropbox/Dev/svn/trunk/www.wp.dev/wp-load.php' );
   switch_to_blog($blogID);
   $query = new WP_Query($args);
 
-	include '../session-list-content.php';
+	$postCount = $query->post_count;
+echo '<p class="session-count">Currently showing ' . $postCount . ' sessions.</p>';
+if ($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+
+        $id = $query->post->ID;
+
+        include '../content-session-excerpt.php';
+
+endwhile; else: ?>
+            <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php       endif;
 
   wp_reset_postdata();
-
-
-
 
 ?>

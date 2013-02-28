@@ -6,7 +6,7 @@
 	$query = new WP_Query($args);
 	$sessions = array();
 	$postCount = $query->post_count;
-	echo '<p class="session-count">Currently showing ' . $postCount . ' sessions.</p>';
+	// echo '<p class="session-count">Currently showing ' . $postCount . ' sessions.</p>';
 	if ($query->have_posts()) : while($query->have_posts()) : $query->the_post();
     $id = $query->post->ID;
     $postTags = wp_get_post_tags( $id );
@@ -29,19 +29,26 @@ endif;
 
 ?>
 
-<table class="session-grid-table rt cf">
+<table class="session-grid-table rt cf" id="session-grid-table">
 	<thead class="cf">
+	<tr class="section-blocks">
+		<th class="empty">&nbsp;</th>
+		<th colspan="3">Weds p.m.</th>
+		<th colspan="3">Thurs a.m.</th>
+		<th colspan="3">Thurs p.m.</th>
+		<th colspan="2">Fri a.m.</th>
+	</tr>
 	<tr>
-		<th class="blank">&nbsp;</th>
+		<th class="empty">&nbsp;</th>
 		<th class="weds">1:45-2:45pm</th>
 		<th class="weds">3:00-4:00pm</th>
 		<th class="weds">4:15-5:15pm</th>
-		<th class="thurs">8:30-9:30am</th>
-		<th class="thurs">9:45-10:45am</th>
-		<th class="thurs">11:00-12:00pm</th>
-		<th class="thurs">2:00-3:00pm</th>
-		<th class="thurs">3:15-4:15pm</th>
-		<th class="thurs">4:30-5:30pm</th>
+		<th class="thursam">8:30-9:30am</th>
+		<th class="thursam">9:45-10:45am</th>
+		<th class="thursam">11:00-12:00pm</th>
+		<th class="thurspm">2:00-3:00pm</th>
+		<th class="thurspm">3:15-4:15pm</th>
+		<th class="thurspm">4:30-5:30pm</th>
 		<th class="fri">9:00-10:00am</th>
 		<th class="fri">10:15-11:15am</th>
 	</tr>
@@ -88,91 +95,51 @@ endif;
 		?>
 	</tr>
 	<tr>
-		<th>Appalachian</th>
+		<th class="livestream">Appalachian <em>Livestream!</em></th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Appalachian A', $i );
+				profmg_session_grid_cycle( $sessions, 'Appalachian', $i );
 				
 			}
 		?>
 	</tr>
 	<tr>
-		<th>Mill Mountain</th>
+		<th>Roanoke E</th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Mill Mountain', $i );
+				profmg_session_grid_cycle( $sessions, 'Roanoke E', $i );
 				
 			}
 		?>
 	</tr>
 	<tr>
-		<th>Buck Mountain</th>
+		<th>Roanoke F</th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Buck Mountain', $i );
+				profmg_session_grid_cycle( $sessions, 'Roanoke F', $i );
 				
 			}
 		?>
 	</tr>
 	<tr>
-		<th>Brush Mountain</th>
+		<th>Roanoke G</th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Brush Mountain', $i );
+				profmg_session_grid_cycle( $sessions, 'Roanoke G', $i );
 				
 			}
 		?>
 	</tr>
 	<tr>
-		<th>Harrison/Tyler</th>
+		<th>Roanoke H</th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Harrison/Tyler', $i );
-				
-			}
-		?>
-	</tr>
-	<tr>
-		<th>Madison</th>
-		<?php
-			for ($i=1; $i < 12 ; $i++) {
-				
-				profmg_session_grid_cycle( $sessions, 'Madison', $i );
-				
-			}
-		?>
-	</tr>
-	<tr>
-		<th>Washington</th>
-		<?php
-			for ($i=1; $i < 12 ; $i++) {
-				
-				profmg_session_grid_cycle( $sessions, 'Washington', $i );
-				
-			}
-		?>
-	</tr>
-	<tr>
-		<th>Monroe</th>
-		<?php
-			for ($i=1; $i < 12 ; $i++) {
-				
-				profmg_session_grid_cycle( $sessions, 'Monroe', $i );
-				
-			}
-		?>
-	</tr>
-	<tr>
-		<th>Wilson</th>
-		<?php
-			for ($i=1; $i < 12 ; $i++) {
-				
-				profmg_session_grid_cycle( $sessions, 'Wilson', $i );
+				profmg_session_grid_cycle( $sessions, 'Roanoke H', $i );
 				
 			}
 		?>
@@ -228,45 +195,98 @@ endif;
 		?>
 	</tr>
 	<tr>
-		<th>Roanoke E</th>
+		<th>Mill Mountain</th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Roanoke E', $i );
+				profmg_session_grid_cycle( $sessions, 'Mill Mountain', $i );
 				
 			}
 		?>
 	</tr>
 	<tr>
-		<th>Roanoke F</th>
+		<th>Buck Mountain</th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Roanoke F', $i );
+				profmg_session_grid_cycle( $sessions, 'Buck Mountain', $i );
 				
 			}
 		?>
 	</tr>
 	<tr>
-		<th>Roanoke G</th>
+		<th>Brush Mountain</th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Roanoke G', $i );
+				profmg_session_grid_cycle( $sessions, 'Brush Mountain', $i );
 				
 			}
 		?>
 	</tr>
 	<tr>
-		<th>Roanoke H</th>
+		<th>Tinker Mountain<br /><em>No laptop Provided</em></th>
 		<?php
 			for ($i=1; $i < 12 ; $i++) {
 				
-				profmg_session_grid_cycle( $sessions, 'Roanoke H', $i );
+				profmg_session_grid_cycle( $sessions, 'Tinker Mountain', $i );
 				
 			}
 		?>
 	</tr>
+	<tr>
+		<th>Washington</th>
+		<?php
+			for ($i=1; $i < 12 ; $i++) {
+				
+				profmg_session_grid_cycle( $sessions, 'Washington', $i );
+				
+			}
+		?>
+	</tr>
+	<tr>
+		<th>Harrison/Tyler</th>
+		<?php
+			for ($i=1; $i < 12 ; $i++) {
+				
+				profmg_session_grid_cycle( $sessions, 'Harrison / Tyler', $i );
+				
+			}
+		?>
+	</tr>
+	<tr>
+		<th>Madison</th>
+		<?php
+			for ($i=1; $i < 12 ; $i++) {
+				
+				profmg_session_grid_cycle( $sessions, 'Madison', $i );
+				
+			}
+		?>
+	</tr>
+	
+	<tr>
+		<th>Monroe</th>
+		<?php
+			for ($i=1; $i < 12 ; $i++) {
+				
+				profmg_session_grid_cycle( $sessions, 'Monroe Computer Lab', $i );
+				
+			}
+		?>
+	</tr>
+	<tr>
+		<th>Wilson</th>
+		<?php
+			for ($i=1; $i < 12 ; $i++) {
+				
+				profmg_session_grid_cycle( $sessions, 'Wilson Computer Lab', $i );
+				
+			}
+		?>
+	</tr>
+	
+	
 </tbody>
 </table>
 

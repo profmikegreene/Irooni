@@ -94,16 +94,28 @@ get_header(); ?>
 		<div class="container">
 			<div class="grid_12">
 				<h3>I want to learn about...</h3>
-				<?php profmg_cloud(); ?>
+				<?php
+					$args = array(
+				    'smallest'                  => 1,
+				    'largest'                   => 5,
+				    'unit'                      => 'em',
+				    'number'										=> 100
+				    );
+					switch_to_blog( 2 );
+					profmg_tag_cloud( $args );
+					restore_current_blog();
+					?>
 			</div>
 		</div>
 	</section>
 	<section class="vendor_cloud">
 		<div class="container">
 			<div class="grid_12">
+				<h3>Thank you to our Vendors and Sponsors</h3>
 		<?php
 		$argsThumb = array(
 		    'order'          => 'ASC',
+		    'orderby'				=> 'title',
 		    'post_type'      => 'attachment',
 		    'posts_per_page'	=>	-1,
 		    'post_parent'		 => 36,

@@ -168,7 +168,11 @@ add_action ('init', 'profmg_init');
 function profmg_breadcrumb() {
 	if (!is_home()) {
 	echo '<ul class="breadcrumbs">';
-	echo '<li><a href="/">Home</a><span>\<span></li>', '<li><a href="',get_option('home'), '">'; echo bloginfo('name');  echo '</a><span>\<span></li>';
+	echo '<li><a href="/">Home</a><span>\<span></li>', '<li><a href="',get_option('home'), '">';
+	$siteName = str_replace( 'New Horizons ', 'NH', get_bloginfo('name') );
+	$siteName = str_replace( '20', '', $siteName );
+	echo $siteName;
+	echo '</a><span>\<span></li>';
 	
 	if ( is_singular('post')) {
 		echo '<li><a href="',get_option('home'), '/posts">Posts</a><span>\<span></li>', '<li><a class="current">', the_title(), '</a></li>';
@@ -209,9 +213,11 @@ else {echo '<li><a href="/">Home</a><span>\<span></li>', '<li><a href="',get_opt
 echo '</ul>';
 }
 function profmg_get_slug() {
-	$post_data = get_post($post->ID, ARRAY_A);
+	global $wp_query;
+	$postid = $wp_query->post->ID;
+	$post_data = get_post($postid, ARRAY_A);
 	$slug = $post_data['post_name'];
-	return $slug; 
+	return $slug;
 }
 // custom admin login logo
 function custom_login_logo() {
@@ -234,19 +240,50 @@ function customAdmin() {
 }
 add_action('admin_head', 'customAdmin');
 
-// homepage tag cloud
-function profmg_cloud($echo = false) {
-  if (function_exists('wp_tag_cloud')){
-  	$args = array(
-    'smallest'                  => 2,
-    'largest'                   => 5,
-    'unit'                      => 'em',
-    'number'										=> 100
-    );
- 	return wp_tag_cloud($args);
-  }
+/* ==================================================================
+*
+*   homepage tag cloud
+*
+* -----------------------------------------------------------------*/
+function profmg_tag_text_callback () {
+	 return sprintf( _n('%s session', '%s sessions', $count), number_format_i18n( $count ) );
 }
 
+function profmg_tag_cloud( $args = '' ) {
+	$defaults = array(
+		'smallest' => 8, 'largest' => 22, 'unit' => 'pt', 'number' => 45,
+		'format' => 'flat', 'separator' => "\n", 'orderby' => 'name', 'order' => 'ASC',
+		'exclude' => '', 'include' => '', 'link' => 'view', 'taxonomy' => 'post_tag', 'echo' => true
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	$tags = get_terms( $args['taxonomy'], array_merge( $args, array( 'orderby' => 'count', 'order' => 'DESC' ) ) ); // Always query top tags
+
+	if ( empty( $tags ) || is_wp_error( $tags ) )
+		return;
+
+	foreach ( $tags as $key => $tag ) {
+		if ( 'edit' == $args['link'] )
+			$link = get_edit_tag_link( $tag->term_id, $tag->taxonomy );
+		else
+			$oldlink = get_term_link( intval($tag->term_id), $tag->taxonomy );
+			$link = preg_replace('/blog/', '', $oldlink);
+		if ( is_wp_error( $link ) )
+			return false;
+
+		$tags[ $key ]->link = $link;
+		$tags[ $key ]->id = $tag->term_id;
+	}
+
+	$return = wp_generate_tag_cloud( $tags, $args ); // Here's where those top tags get sorted according to $args
+
+	$return = apply_filters( 'wp_tag_cloud', $return, $args );
+
+	if ( 'array' == $args['format'] || empty($args['echo']) )
+		return $return;
+
+	echo $return;
+}
 /* ==================================================================
 *
 *   Custom Post Type - Sessions

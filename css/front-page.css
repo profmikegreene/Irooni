@@ -46,7 +46,10 @@
 	top:60px;
 	position: relative;
 	font-size: 1.5em;
-	margin:0 20px;
+	margin:0;
+}
+.callToAction .white.button {
+	margin-left:20px;
 }
 .callToAction .button:hover {
 }
@@ -115,6 +118,9 @@
 .photos img {
 	margin:5px;
 }
+.afg-cell a {
+	border:none;
+}
 
 /* ==================================================================
 *
@@ -145,6 +151,9 @@
 * -----------------------------------------------------------------*/
 .vendor_cloud {
 	background:#fff;
+}
+.vendor_cloud h3 {
+	text-align: center;
 }
 .vendor_cloud img {
 	margin:10px;

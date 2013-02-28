@@ -7,7 +7,14 @@
 *   Mobile:         <720px
 *
 * -----------------------------------------------------------------*/
-
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+  .session-grid-table {
+    font-size: .9em;
+  }
+  .session-grid-table a {
+    height:80px;
+  }
+}
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   /* Containers
@@ -190,6 +197,9 @@
     display: block;
     margin-bottom: 20px;
   }
+  .callToAction .white.button {
+    margin-left: 0;
+  }
   /* ==================================================================
   *
   *   Session Single
@@ -304,6 +314,9 @@
   .breadcrumbs {
     width:100%;
   }
+  .pageContent .entry-header {
+    top:-200px;
+  }
   /* ==================================================================
   *
   *   Front Page
@@ -325,13 +338,27 @@
   .page-template-conference-home-page-php .feature h1 {
     line-height: 1.25em;
   }
+  .callToAction {
+    margin-top:10px;
+  }
+  .callToAction .button {
+    display: block;
+    float: left;
+    position: relative;
+    width:46%;
+    margin: 0 1%;
+    padding:5px 0;
+  }
+  .callToAction .white.button {
+    margin-left: 1%;
+  }
   /* ==================================================================
   *
   *   Session List
   *
   * -----------------------------------------------------------------*/
   .page-template-session-list-template-php .controlForm {
-    top:-30px;
+    top:-40px;
   }
   .page-template-session-list-template-php .postform {
     left:auto;
@@ -347,6 +374,9 @@
   }
   .page-template-session-list-template-php .feature_and_announcements {
     height:120px;
+  }
+  .page-template-session-list-template-php .feature_and_announcements .container {
+    top:-67px;
   }
   .page-template-session-list-template-php .breadcrumbs {
     top:140px;
@@ -366,76 +396,7 @@
     width:100%;
     height: auto;
   }
-  /* ==================================================================
-  *
-  *   Session Grid
-  *
-  * -----------------------------------------------------------------*/
-  .session-grid-table {
-    display: block;
-    position: relative;
-    width: 100%;
-    -webkit-overflow-scrolling:touch;
-  }
-  .session-grid-table thead {
-    display: block;
-    float: left;
 
-  }
-  .session-grid-table tbody {
-    display: block;
-    width: auto;
-    position: relative;
-    overflow: scroll;
-    overflow-y:hidden;
-    white-space: nowrap;
-
-  }
-  .session-grid-table thead tr {
-    display: block;
-  }
-  .session-grid-table thead th {
-    width:60px;
-  }
-  .session-grid-table th {
-    display: block;
-    height:28px;
-  }
-  .session-grid-table .blank,
-  .session-grid-table tbody th {
-    height:15px;
-  }
-  .session-grid-table tbody tr {
-    display: inline-block;
-    vertical-align: top;
-  }
-  .session-grid-table td {
-    display: block;
-    min-height: 28px;
-    width:240px;
-    height:28px;
-  }
-  .session-grid-table td a{
-    width:230px;
-    white-space: normal;
-  }
-
-  .session-grid-table th {
-    border-bottom: 0;
-    border-right:0;
-  }
-  .session-grid-table td {
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 0;
-  }
-  .session-grid-table tbody tr {
-    border-right: 1px solid #babcbf;
-  }
-  .session-grid-table th:last-child,
-  .session-grid-table td:last-child {
-  border-bottom: 1px solid #babcbf;
-  }
 
   /* ==================================================================
   *
@@ -450,3 +411,81 @@
   }
 
 }
+
+@media only screen and (max-width: 1024px) {
+  /* ==================================================================
+    *
+    *   Session Grid
+    *
+    * -----------------------------------------------------------------*/
+    .session-grid-table {
+      display: block;
+      position: relative;
+      width: 100%;
+      -webkit-overflow-scrolling:touch;
+    }
+    .session-grid-table a {
+      height:30px;
+    }
+    .session-grid-table thead {
+      display: block;
+      float: left;
+
+    }
+    .session-grid-table tbody {
+      display: block;
+      width: auto;
+      position: relative;
+      overflow: scroll;
+      overflow-y:hidden;
+      white-space: nowrap;
+
+    }
+    .session-grid-table thead tr {
+      display: block;
+    }
+    .session-grid-table thead th {
+      width:60px;
+    }
+    .session-grid-table .section-blocks {
+      display: none;
+    }
+    .session-grid-table th {
+      display: block;
+      height:28px;
+    }
+    .session-grid-table .empty,
+    .session-grid-table tbody th {
+      height:15px;
+    }
+    .session-grid-table tbody th {
+      border-left:none;
+    }
+    .session-grid-table tbody tr {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .session-grid-table td {
+      display: block;
+      min-height: 28px;
+      width:240px;
+      height:28px;
+    }
+    .session-grid-table td a{
+      width:230px;
+      white-space: normal;
+    }
+
+    .session-grid-table th {
+      border-bottom: 0;
+      border-right:0;
+    }
+    .session-grid-table td {
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+    .session-grid-table tbody tr {
+      border:none;
+    }
+  }

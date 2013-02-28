@@ -19,7 +19,7 @@ body {
 	line-height:18px;
 	font-weight:300;
 }
-a {color: #00539B; text-decoration:none;}
+a {color: #00539B; text-decoration:none;border-bottom:1px dashed #00539B;}
 a:hover, a:active, a:visited:hover {color:#5E9732; border-bottom:1px dashed #5E9732;}
 a:visited { color:#004987; text-decoration:none;}
 hr {width:100%; clear:both;}
@@ -57,25 +57,27 @@ section {
 	border-bottom:1px solid #e6e6e6;
 }
 
-.button, :active.button, :visited.button { 
-	font-size:1em; 
+.button, :active.button, :visited.button {
+	font-size:1em;
 	font-weight: 400;
-	color:#ffffff; 
-	padding:5px; 
+	color:#ffffff;
+	padding:5px;
 	line-height:1em;
-	-moz-border-radius: 3px;  
-	-webkit-border-radius: 3px;  
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.1);   
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
 	border-radius: none;
-	box-shadow:none; 
+	box-shadow:none;
 	text-decoration: none;
 	margin:0 0 0 5px;
 	text-align:center;
+	border-bottom:none;
 }
 a:hover.button {
 	color:#fff;
 	text-decoration: none;
+	border:none;
 }
 .blue.button {
 	border: 1px solid #2F5BB7;

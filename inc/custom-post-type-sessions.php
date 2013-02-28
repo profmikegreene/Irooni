@@ -65,6 +65,7 @@ $profmg_session_fields = array(
 	'$nh_session_id'               => 'nh_session_id',
 	'$session_room'                => 'session_room',
 	'$session_slot'                => 'session_slot',
+
 	'$lead_presenter_type'         => 'lead_presenter_type',
 	'$lead_presenter_fname'        => 'lead_presenter_fname',
 	'$lead_presenter_lname'        => 'lead_presenter_lname',
@@ -72,35 +73,35 @@ $profmg_session_fields = array(
 	'$lead_presenter_college'      => 'lead_presenter_college',
 	'$lead_presenter_facebook'		 => 'lead_presenter_facebook',
 	'$lead_presenter_twitter'			 => 'lead_presenter_twitter',
-	
+
 	'$co1_presenter_fname'    => 'co1_presenter_fname',
 	'$co1_presenter_lname'    => 'co1_presenter_lname',
 	'$co1_presenter_title'    => 'co1_presenter_title',
 	'$co1_presenter_college'  => 'co1_presenter_college',
 	'$co1_presenter_facebook' => 'co1_presenter_facebook',
 	'$co1_presenter_twitter'  => 'co1_presenter_twitter',
-	
+
 	'$co2_presenter_fname'    => 'co2_presenter_fname',
 	'$co2_presenter_lname'    => 'co2_presenter_lname',
 	'$co2_presenter_title'    => 'co2_presenter_title',
 	'$co2_presenter_college'  => 'co2_presenter_college',
 	'$co2_presenter_facebook' => 'co2_presenter_facebook',
 	'$co2_presenter_twitter'  => 'co2_presenter_twitter',
-	
+
 	'$co3_presenter_fname'    => 'co3_presenter_fname',
 	'$co3_presenter_lname'    => 'co3_presenter_lname',
 	'$co3_presenter_title'    => 'co3_presenter_title',
 	'$co3_presenter_college'  => 'co3_presenter_college',
 	'$co3_presenter_facebook' => 'co3_presenter_facebook',
 	'$co3_presenter_twitter'  => 'co3_presenter_twitter',
-	
+
 	'$co4_presenter_fname'    => 'co4_presenter_fname',
 	'$co4_presenter_lname'    => 'co4_presenter_lname',
 	'$co4_presenter_title'    => 'co4_presenter_title',
 	'$co4_presenter_college'  => 'co4_presenter_college',
 	'$co4_presenter_facebook' => 'co4_presenter_facebook',
 	'$co4_presenter_twitter'  => 'co4_presenter_twitter',
-	
+
 	'$session_sentence'            => 'session_sentence',
 	'$session_type'                => 'session_type',
 	'$session_abstract'            => 'session_abstract',
@@ -152,16 +153,18 @@ function profmg_display_session_meta_box ( $session ){
            'Buck Mountain' ); }?>>Buck Mountain</option>
            <option value="Brush Mountain" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
            'Brush Mountain' ); }?>>Brush Mountain</option>
-           <option value="Harrison/Tyler" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
-           'Harrison/Tyler' ); }?>>Harrison/Tyler</option>
+           <option value="Tinker Mountain" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
+           'Tinker Mountain' ); }?>>Tinker Mountain</option>
+           <option value="Harrison / Tyler" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
+           'Harrison / Tyler' ); }?>>Harrison / Tyler</option>
            <option value="Madison" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
            'Madison' ); }?>>Madison</option>
            <option value="Washington" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
            'Washington' ); }?>>Washington</option>
-           <option value="Monroe" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
-           'Monroe' ); }?>>Monroe</option>
-           <option value="Wilson" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
-           'Wilson' ); }?>>Wilson</option>
+           <option value="Monroe Computer Lab" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
+           'Monroe Computer Lab' ); }?>>Monroe Computer Lab</option>
+           <option value="Wilson Computer Lab" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
+           'Wilson Computer Lab' ); }?>>Wilson Computer Lab</option>
            <option value="Crystal A" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
            'Crystal A' ); }?>>Crystal A</option>
            <option value="Crystal B" <?php if (isset($custom_fields['session_room'][0])){selected( $custom_fields['session_room'][0],
@@ -704,7 +707,7 @@ function profmg_columns_head($defaults) {
 	$defaults['lead_presenter_lname'] = 'Presenter';
 	$defaults['session_room'] = 'Room';
 	$defaults['session_slot'] = 'Time';
-
+	$defaults['nh_session_id'] = 'Session ID';
 	return $defaults;
 }
 
@@ -723,11 +726,35 @@ function profmg_columns_content($column_name, $post_ID) {
 		$session_slot = get_post_meta( $post_ID, 'session_slot', true );
 		echo $session_slot;
 	}
+	if ( $column_name == 'nh_session_id' ){
+		$session_id = get_post_meta( $post_ID, 'nh_session_id', true );
+		echo $session_id;
+	}
+}
+
+add_filter( 'manage_edit-sessions_sortable_columns', 'profmg_sortable_columns' );
+function profmg_sortable_columns( $columns ) {
+	$columns['nh_session_id'] = 'nh_session_id';
+	return $columns;
+}
+
+add_action( 'pre_get_posts', 'profmg_session_id_orderby' );
+function profmg_session_id_orderby( $query ) {
+	if( ! is_admin() )
+		return;
+
+	$orderby = $query->get( 'orderby');
+
+	if( 'nh_session_id' == $orderby ) {
+		$query->set('meta_key','nh_session_id');
+		$query->set('orderby','meta_value_num');
+	}
 }
 
 add_filter('manage_sessions_posts_columns', 'profmg_columns_remove_date');
 function profmg_columns_remove_date($defaults) {
 	unset($defaults['date']);
+	unset($defaults['comments']);
 	return $defaults;
 }
 
@@ -752,6 +779,7 @@ function profmg_session_grid_cycle( $sessions,  $current_room, $current_slot ) {
 	}
 	if ( empty( $current_sessions[1] ) == FALSE  ) {
 		$css_class = isset($current_sessions[1]['category'][0]->slug) ? $current_sessions[1]['category'][0]->slug : 'no-category';
+		$css_class .= ' ' . str_replace(' ', '', $current_sessions[1]['session_room']) . '-' . $current_sessions[1]['session_slot'];
 		echo '<td class="' . $css_class . '">';
 		echo '<a href="' . $current_sessions[1]['session_url'] . '">';
 		echo '<span class="error">' . substr( $current_sessions[1]['session_title'], 0, 70 ) . '...</span>';
@@ -760,6 +788,7 @@ function profmg_session_grid_cycle( $sessions,  $current_room, $current_slot ) {
 	}
 	if ( empty( $current_sessions[0] ) == FALSE ) {
 		$css_class = isset($current_sessions[0]['category'][0]->slug) ? $current_sessions[0]['category'][0]->slug : 'no-category';
+		$css_class .= ' ' . str_replace(' ', '', $current_sessions[0]['session_room']) . '-' . $current_sessions[0]['session_slot'];
 		echo '<td class="' . $css_class . '">';
 		echo '<a href="' . $current_sessions[0]['session_url'] . '">';
 		echo substr( $current_sessions[0]['session_title'], 0, 70 );
@@ -768,14 +797,28 @@ function profmg_session_grid_cycle( $sessions,  $current_room, $current_slot ) {
 		echo '</td>';
 	}
 	else {
-		echo '<td></td>';
+		$css_class = isset($current_sessions[0]['category'][0]->slug) ? $current_sessions[0]['category'][0]->slug : 'blank';
+		echo '<td class="' . $css_class . '">';
 	}
 	// echo '<pre>';
 	// var_dump($current_sessions[0]['category'][0]);
 	// echo '</pre>';
 }
 
-
+function profmg_bulk_delete() {
+	$args = array(
+		'numberposts' => 50,
+		'post_type' =>'sessions'
+	);
+	$posts = get_posts( $args );
+	if (is_array($posts)) {
+	   foreach ($posts as $post) {
+	// what you want to do;
+	       echo "Deleted Post: ".get_the_title( $post->ID )."\r\n";
+	       wp_delete_post( $post->ID, true);
+	   }
+	}
+}
 
 
 ?>

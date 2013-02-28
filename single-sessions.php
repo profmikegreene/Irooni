@@ -41,28 +41,28 @@ get_header(); ?>
 					 <?php echo $meta['lead_presenter_fname'][0] . ' ' .
 						$meta['lead_presenter_lname'][0] . ', ' . $meta['lead_presenter_title'][0] . ' at ' .
 						$meta['lead_presenter_college'][0] ; ?></p>
-				<p  class="facebook"><span class="label">Facebook:</span>
+
 					 <?php
 					 	if (isset( $meta['lead_presenter_facebook'][0] )){
 					 ?>
+					 		<p  class="facebook"><span class="label">Facebook:</span>
 					 		<a target="_blank" href="http://www.facebook.com/<?php echo $meta['lead_presenter_facebook'][0];?>"><?php echo $meta['lead_presenter_facebook'][0];?></a></p>
+							</p>
 						<?php
 						} else {
-							echo 'Not given';
 						}
 						?>
-					</p>
-					<p class="twitter"><span class="label">Twitter:</span>
+
 					 <?php
 					 	if (isset( $meta['lead_presenter_twitter'][0] )){
 					 ?>
+					 		<p class="twitter"><span class="label">Twitter:</span>
 					 		<a target="_blank" href="http://www.twitter.com/<?php echo $meta['lead_presenter_twitter'][0];?>">@<?php echo $meta['lead_presenter_twitter'][0];?></a></p>
+							</p>
 						<?php
 						} else {
-							echo 'Not given';
 						}
 						?>
-					</p>
 					<?php if (isset( $meta['co1_presenter_fname'][0] )){ ?>
 							<p><span class="label presenter">Co-Presenter:</span>
 						<?php
@@ -72,18 +72,17 @@ get_header(); ?>
 							echo isset ( $meta['co1_presenter_college'][0] ) ? ' at ' . $meta['co1_presenter_college'][0] : NULL ;
 						?>
 							</p>
-							<p class="facebook"><span class="label">Facebook:</span>
+
 						<?php
 							echo isset( $meta['co1_presenter_facebook'][0] ) ?
-							'<a target="_blank" href="http://www.facebook.com/' . $meta['co1_presenter_facebook'][0] . '">' . $meta['co1_presenter_facebook'][0] . '</a>' : 'Not Given';
+							'<p class="facebook"><span class="label">Facebook:</span><a target="_blank" href="http://www.facebook.com/' . $meta['co1_presenter_facebook'][0] . '">' . $meta['co1_presenter_facebook'][0] . '</a></p>' : NULL;
 						?>
-							</p>
-							<p class="twitter"><span class="label">Twitter:</span>
+
 						<?php
 							echo isset( $meta['co1_presenter_twitter'][0] ) ?
-							'<a target="_blank" href="http://www.twitter.com/' . $meta['co1_presenter_twitter'][0] . '">@' . $meta['co1_presenter_twitter'][0] . '</a>' : 'Not Given';
+							'<p class="twitter"><span class="label">Twitter:</span><a target="_blank" href="http://www.twitter.com/' . $meta['co1_presenter_twitter'][0] . '">@' . $meta['co1_presenter_twitter'][0] . '</a></p>' : NULL;
 						?>
-							</p>
+
 					<?php } ?>
 					<?php if (isset( $meta['co2_presenter_fname'][0] )){ ?>
 							<p><span class="label presenter">Co-Presenter:</span>
@@ -91,21 +90,19 @@ get_header(); ?>
 							echo $meta['co2_presenter_fname'][0];
 							echo isset( $meta['co2_presenter_lname'][0] ) ? ' ' . $meta['co2_presenter_lname'][0] : NULL;
 							echo isset( $meta['co2_presenter_title'][0] ) ? ', ' . $meta['co2_presenter_title'][0] : NULL;
-							echo isset ( $meta['co2_presenter_college'][0] ) ? ' at ' . $meta['co2_presenter_college'][0] : NULL ; 
+							echo isset ( $meta['co2_presenter_college'][0] ) ? ' at ' . $meta['co2_presenter_college'][0] : NULL ;
 						?>
 							</p>
-							<p class="facebook"><span class="label">Facebook:</span>
+
 						<?php
 							echo isset( $meta['co2_presenter_facebook'][0] ) ?
-							'<a target="_blank" href="http://www.facebook.com/' . $meta['co2_presenter_facebook'][0] . '">' . $meta['co2_presenter_facebook'][0] . '</a>' : 'Not Given';
+							'<p class="facebook"><span class="label">Facebook:</span><a target="_blank" href="http://www.facebook.com/' . $meta['co2_presenter_facebook'][0] . '">' . $meta['co2_presenter_facebook'][0] . '</a></p>' : NULL;
 						?>
-							</p>
-							<p class="twitter"><span class="label">Twitter:</span>
+
 						<?php
 							echo isset( $meta['co2_presenter_twitter'][0] ) ?
-							'<a target="_blank" href="http://www.twitter.com/' . $meta['co2_presenter_twitter'][0] . '">@' . $meta['co2_presenter_twitter'][0] . '</a>' : 'Not Given';
+							'<p class="twitter"><span class="label">Twitter:</span><a target="_blank" href="http://www.twitter.com/' . $meta['co2_presenter_twitter'][0] . '">@' . $meta['co2_presenter_twitter'][0] . '</a></p>' : NULL;
 						?>
-							</p>
 					<?php } ?>
 					<?php if (isset( $meta['co3_presenter_fname'][0] )){ ?>
 							<p><span class="label presenter">Co-Presenter:</span>
@@ -113,21 +110,18 @@ get_header(); ?>
 							echo $meta['co3_presenter_fname'][0];
 							echo isset( $meta['co3_presenter_lname'][0] ) ? ' ' . $meta['co3_presenter_lname'][0] : NULL;
 							echo isset( $meta['co3_presenter_title'][0] ) ? ', ' . $meta['co3_presenter_title'][0] : NULL;
-							echo isset ( $meta['co3_presenter_college'][0] ) ? ' at ' . $meta['co3_presenter_college'][0] : NULL ; 
+							echo isset ( $meta['co3_presenter_college'][0] ) ? ' at ' . $meta['co3_presenter_college'][0] : NULL ;
 						?>
 							</p>
-							<p class="facebook"><span class="label">Facebook:</span>
+
 						<?php
 							echo isset( $meta['co3_presenter_facebook'][0] ) ?
-							'<a target="_blank" href="http://www.facebook.com/' . $meta['co3_presenter_facebook'][0] . '">' . $meta['co3_presenter_facebook'][0] . '</a>' : 'Not Given';
+							'<p class="facebook"><span class="label">Facebook:</span><a target="_blank" href="http://www.facebook.com/' . $meta['co3_presenter_facebook'][0] . '">' . $meta['co3_presenter_facebook'][0] . '</a></p>' : NULL;
 						?>
-							</p>
-							<p class="twitter"><span class="label">Twitter:</span>
 						<?php
 							echo isset( $meta['co3_presenter_twitter'][0] ) ?
-							'<a target="_blank" href="http://www.twitter.com/' . $meta['co3_presenter_twitter'][0] . '">@' . $meta['co3_presenter_twitter'][0] . '</a>' : 'Not Given';
+							'<p class="twitter"><span class="label">Twitter:</span><a target="_blank" href="http://www.twitter.com/' . $meta['co3_presenter_twitter'][0] . '">@' . $meta['co3_presenter_twitter'][0] . '</a></p>' : NULL;
 						?>
-							</p>
 					<?php } ?>
 					<?php if (isset( $meta['co4_presenter_fname'][0] )){ ?>
 							<p><span class="label presenter">Co-Presenter:</span>
@@ -135,21 +129,18 @@ get_header(); ?>
 							echo $meta['co4_presenter_fname'][0];
 							echo isset( $meta['co4_presenter_lname'][0] ) ? ' ' . $meta['co4_presenter_lname'][0] : NULL;
 							echo isset( $meta['co4_presenter_title'][0] ) ? ', ' . $meta['co4_presenter_title'][0] : NULL;
-							echo isset ( $meta['co4_presenter_college'][0] ) ? ' at ' . $meta['co4_presenter_college'][0] : NULL ; 
+							echo isset ( $meta['co4_presenter_college'][0] ) ? ' at ' . $meta['co4_presenter_college'][0] : NULL ;
 						?>
 							</p>
-							<p class="facebook"><span class="label">Facebook:</span>
 						<?php
 							echo isset( $meta['co4_presenter_facebook'][0] ) ?
-							'<a target="_blank" href="http://www.facebook.com/' . $meta['co4_presenter_facebook'][0] . '">' . $meta['co4_presenter_facebook'][0] . '</a>' : 'Not Given';
+							'<p class="facebook"><span class="label">Facebook:</span><a target="_blank" href="http://www.facebook.com/' . $meta['co4_presenter_facebook'][0] . '">' . $meta['co4_presenter_facebook'][0] . '</a></p>' : NULL;
 						?>
-							</p>
-							<p class="twitter"><span class="label">Twitter:</span>
 						<?php
 							echo isset( $meta['co4_presenter_twitter'][0] ) ?
-							'<a target="_blank" href="http://www.twitter.com/' . $meta['co4_presenter_twitter'][0] . '">@' . $meta['co4_presenter_twitter'][0] . '</a>' : 'Not Given';
+							'<p class="twitter"><span class="label">Twitter:</span><a target="_blank" href="http://www.twitter.com/' . $meta['co4_presenter_twitter'][0] . '">@' . $meta['co4_presenter_twitter'][0] . '</a></p>' : NULL;
 						?>
-							</p>
+							
 					<?php } ?>
 		</div>
 		<div class="session-details">

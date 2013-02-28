@@ -15,6 +15,7 @@ get_header(); ?>
 
 	<div id="content" class="grid_9" role="main">
 		<div class="pageContent">
+<?php	query_posts( $query_string . '&posts_per_page=-1' ); ?>
 <?php if ( have_posts() ) : ?>
 <?php while ( have_posts() ) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -24,20 +25,7 @@ get_header(); ?>
 						?></h1>
 				</header><!-- .entry-header -->
 
-				<div class="entry-content">
-<?php 
-				echo '<h3>';
-        echo '<a href="' . get_permalink( $id ) . '">';
-        echo get_the_title($id);
-        echo ' with ';
-        echo    esc_html( get_post_meta( $id,'lead_presenter_fname', true ) ).' ';
-        echo    esc_html( get_post_meta( $id,'lead_presenter_lname', true ) );
-        echo '</a>';
-
-        echo '</h3>';
-?>
-<?php the_content(); ?>
-				</div><!-- .entry-content -->
+				<?php include(locate_template( 'content-session-excerpt.php' )); ?>
 			</article><!-- #post-<?php the_ID(); ?> -->
 
 <?php endwhile; // end of the loop. ?>
@@ -50,7 +38,6 @@ get_header(); ?>
 
 				<div class="entry-content">
 					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
-					
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
 

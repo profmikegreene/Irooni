@@ -22,7 +22,7 @@
     instead of wp_head in order to correctly load after jQuery. **More reliable to just
     load jQuery in head**
 
-  Grab post_id's from all sessions with custom code and use them for qr code generation, they
-    redirect to the appropriate permalink
+  Grab post_id's from all sessions with custom code and use them for qr code generation, they redirect to the appropriate permalink
 
   Create apple-icon.png
+

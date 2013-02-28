@@ -5,11 +5,16 @@
  */
 
 get_header(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 <section class="feature_and_announcements">
     <div class="container">
-        <div class="grid_9 pageHeader">
-    <?php profmg_breadcrumb(); ?>
+        <div class="grid_9">
+            <header class="entry-header">
+                <h1 class="entry-title"><?php the_title(); ?></h1>
+            </header><!-- .entry-header -->
+            <?php   profmg_breadcrumb(); ?>
         </div>
+
         <div class="grid_3">
             <form method="post" name="controlForm" action="#" id="controlForm" class="controlForm">
                 <label for="sortBy">Sort By</label><br />
@@ -53,16 +58,6 @@ get_header(); ?>
                         );
                     wp_dropdown_categories( $args );
 ?>
-                <!-- <select name="filterByAudience" class="audience postform" id="audience">
-                    <option value="All">All Audiences</option>
-                    <option value="Faculty">Faculty</option>
-                    <option value="Student Services">Student Services</option>
-                    <option value="IT">IT</option>
-                    <option value="Blackboard Admins">Blackboard Admins</option>
-                    <option value="Deans/VPs/Presidents">Deans/VPs/Presidents</option>
-                    <option value="Facilities">Facilities</option>
-                    <option value="Adjuncts">Adjuncts</option>
-                </select> -->
                 <input type="hidden" id="blogID" name="blogID" value="<?php echo $blog_id; ?>" />
                 <input id="submit" class="green button" name="submit" type="submit" value="View">
             </form>
@@ -71,13 +66,18 @@ get_header(); ?>
 <div id="mainContainer" class="container mainContainer">
     <div id="content" class="grid_9" role="main">
         <div class="pageContent" id="pageContent">
-        <?php while ( have_posts() ) : the_post(); ?>
-
         <?php get_template_part( 'content', 'page' ); ?>
 
         <?php endwhile; // end of the loop.
+        $args= array(
+            'post_type'=>'sessions',
+            'posts_per_page'  => -1,
+            'order_by'  =>'title',
+            'order' => 'ASC'
 
-        get_template_part( 'session', 'list-content' ); ?>
+
+        );
+        include(locate_template( 'session-list-content.php' )); ?>
     </div>
     </div><!-- #content -->
     <div class="grid_3 pageSidebar">

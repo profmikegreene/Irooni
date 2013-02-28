@@ -88,6 +88,7 @@
 .globalNav .menu a {
 	display: block;
 	padding:0 15px;
+	border:none;
 }
 .globalNav .menu a:hover,
 .globalNav .menu a:focus {
@@ -139,6 +140,7 @@
 .globalNav .sub-menu li, .globalNav .sub-menu li a{
 	float:none;
 	display:block;
+	border:none;
 }
 
 

@@ -37,6 +37,8 @@ publish
 .idea
 psd
 build
+import
+uploads
 
 # build script local files
 build/buildinfo.properties
