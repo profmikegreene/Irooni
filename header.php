@@ -13,7 +13,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	
 	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
 	
 	<?php if (is_search()) { ?>
 	<meta name="robots" content="noindex, nofollow" /> 
