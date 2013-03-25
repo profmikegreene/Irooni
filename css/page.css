@@ -319,7 +319,8 @@ h2.tight {
 }
 .session-embed {
   position: relative;
-  padding-bottom: 56.25%; /* 16/9 ratio */
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-bottom:75%; /* 4:3 ratio */
   padding-top: 30px; /* IE6 workaround*/
   height: 0;
   overflow: hidden;
@@ -361,7 +362,13 @@ h2.tight {
   margin-left: 0;
   padding:2px 3px;
 }
-
+.session-sidebar .evaluation {
+  margin-top: 20px;
+  display:none;
+}
+.session-sidebar .evaluation .button {
+  margin: 0;
+}
 /* ==================================================================
 *
 *   Session Grid
@@ -461,6 +468,31 @@ h2.tight {
   border:none;
 }
 
+/* ==================================================================
+*
+*   Session Table
+*
+* -----------------------------------------------------------------*/
+.page-template-session-table-template-php .mainContainer {
+  width:98%;
+  margin:1%;
+}
+table.grid tr:nth-child(odd){
+  background:#eee;
+}
+table.grid td,
+table.grid th {
+  border:1px solid #333;
+}
+table.grid th {
+  background:#aaa;
+}
+table.grid .time {
+  width:110px;
+}
+table.grid .room {
+  width:120px;
+}
 /* ==================================================================
 *
 *   Category Styles

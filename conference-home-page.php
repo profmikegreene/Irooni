@@ -13,15 +13,19 @@ get_header(); ?>
 	<div class="grid_12">
 		<div class="feature grid_8" id="feature">
 			<div class="fadeIn alpha">
-				<h1>Answer the question, what is great teaching?</h1>
-				<p>Featuring Seven Principles for Good Practice in Undergraduate Education by Arthur W. Chickering and Zelda F. Gamson</p>
+				<h1>Design your agenda now: sessions on personal wellness, retention, engagement, eLearning and more.</h1>
 			</div>
 			<div class="fadeIn">
-				<h1>Learning what teachers make with Taylor Mali.</h1>
-
+				<h1>Discover great teaching through Chickering and Gamson's Seven Principles for Good Practice in Undergraduate Education.</j1>
 			</div>
 			<div class="fadeIn">
-				<h1>Explore how to learn, teach, and apply technology in your classroom, right in your office.</h1>
+				<h1>Connect with 800 of your colleagues across the state.</h1>
+			</div>
+			<div class="fadeIn">
+				<h1>Learn "What Teachers Make" with keynote speaker Taylor Mali.</h1>
+			</div>
+			<div class="fadeIn">
+				<h1>Explore learning, teaching, and applying technology in your classroom without leaving your office.</h1>
 			</div>
 		</div>
 		<div class="callToAction grid_4 push_8">
@@ -55,14 +59,6 @@ get_header(); ?>
 						<?php the_content(); ?>
 					<?php endforeach; ?>
 					<?php wp_reset_query(); ?>
-					<hr />
-					<div class="dates" id="dates">
-						<h3>Current Events</h3>
-						<div class="date">Feb. 15 - Registration Closes</div>
-						<div class="date">Apr. 3 - NH13 Day 1</div>
-						<div class="date">Apr. 4 - NH13 Day 2</div>
-						<div class="date">Apr. 5 - NH13 Day 3</div>
-					</div>
 			</div>
 		</div>
 		</div>
@@ -110,7 +106,7 @@ get_header(); ?>
 	</section>
 	<section class="vendor_cloud">
 		<div class="container">
-			<div class="grid_12">
+			<div class="grid_11 push_05">
 				<h3>Thank you to our Vendors and Sponsors</h3>
 		<?php
 		$argsThumb = array(

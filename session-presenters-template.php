@@ -1,6 +1,6 @@
 <?php
 
- /*Template Name: Concurrent Session ID's
+ /*Template Name: List sessions by presenter
 
  */
 
@@ -25,52 +25,59 @@ get_header(); ?>
         <?php get_template_part( 'content', 'page' ); ?>
 
         <?php endwhile; // end of the loop.
-        $rooms = array(
-        'Shenandoah A',
-        'Shenandoah B',
-        'Pocahontas A',
-        'Pocahontas B',
-        'Appalachian',
-        'Mill Mountain',
-        'Buck Mountain',
-        'Brush Mountain',
-        'Tinker Mountain',
-        'Harrison / Tyler',
-        'Madison',
-        'Washington',
-        'Monroe Computer Lab',
-        'Wilson Computer Lab',
-        'Crystal A',
-        'Crystal B',
-        'Crystal C',
-        'Crystal D',
-        'Crystal E',
-        'Roanoke E',
-        'Roanoke F',
-        'Roanoke G',
-        'Roanoke H'
+        $args= array(
+                'post_type'=>'sessions',
+                'posts_per_page'  => -1,
+                'orderby'  =>'meta_value',
+                'order' => 'ASC',
+                'meta_key' => 'lead_presenter_lname'
         );
-        foreach ($rooms as $room) {
+        $query = new WP_Query($args);
+        $names = array();
+        $postCount = $query->post_count;
+        echo '<p class="session-count">Currently showing ' . $postCount . ' sessions.</p>';
+        if ($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+
+            $id = $query->post->ID;
+            $names[get_post_meta( $id, 'lead_presenter_fname', true ).' '.get_post_meta( $id, 'lead_presenter_lname', true )] = array(
+                'first' =>get_post_meta( $id, 'lead_presenter_fname', true ),
+                'last' =>get_post_meta( $id, 'lead_presenter_lname', true )
+                );
+        endwhile; else: ?>
+                <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+        <?php       endif;
+
+        foreach ($names as $key => $name) {
             $args= array(
                 'post_type'=>'sessions',
                 'posts_per_page'  => -1,
                 'orderby'  =>'title',
                 'order' => 'ASC',
-                'meta_key' => 'session_room',
-                'meta_value' => $room
+                'meta_query' => array(
+                    'relation' => 'AND',
+                    array(
+                        'key' => 'lead_presenter_lname',
+                        'value' => $name['last']
+                    ),
+                    array (
+                        'key' =>'lead_presenter_fname',
+                        'value' => $name['first']
+                    )
+                )
 
 
             );
             $query = new WP_Query($args);
 
             $postCount = $query->post_count;
-            echo '<p class="session-count">Currently showing ' . $postCount . ' sessions in room '. $room .'.</p>';
+            echo '<p>'.$key;
+            echo '<br />';
             if ($query->have_posts()) : while($query->have_posts()) : $query->the_post();
 
                     $id = $query->post->ID;
 
                     echo '<a href="' . get_permalink( $id ) . '">';
-                    echo get_permalink( $id );
+                    echo get_the_title( $id );
                     echo '</a>';
                     echo '<br />';
 
@@ -78,7 +85,7 @@ get_header(); ?>
             endwhile; else: ?>
                     <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php       endif;
-
+            echo '<p>';
         }//end foreach
         ?>
     </div>

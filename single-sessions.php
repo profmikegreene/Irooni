@@ -26,6 +26,20 @@ get_header(); ?>
 					<?php the_content(); ?>
 					<h2>Session Outcomes</h2>
 					<p><?php echo $meta['session_outcome'][0]; ?></p>
+					<?php if( isset($meta['session_slideshare'][0]) ){ ?>
+					<p><?php $slideshare = preg_split('/=|&/', $meta['session_slideshare'][0]);
+										echo '
+										<div class="session-embed">
+										<iframe src="http://www.slideshare.net/slideshow/embed_code/' . $slideshare[1] . '"
+										frameborder="0"
+										marginwidth="0"
+										marginheight="0"
+										scrolling="no"
+										allowfullscreen webkitallowfullscreen mozallowfullscreen>
+										</iframe>
+										</div>
+										';
+						?></p><?php } ?>
 				</div><!-- .entry-content -->
 				<div class="separator"></div>
 			</article><!-- #post-<?php the_ID(); ?> -->
@@ -241,6 +255,13 @@ get_header(); ?>
 
 			<?php the_tags( '', ', ', ''); ?>
 			</p>
+			<?php if( isset($meta['session_scantron'][0]) ){ ?>
+
+			<p class="evaluation"><span class="label">&nbsp;</span>
+				<a href="<?php echo $meta['session_scantron'][0]; ?>" class="blue button">Session Evaluation</a>
+			</p>
+			<?php } ?>
+
 		</div><!--end .session-details-->
 	</div>
 </div><!-- #mainContainer -->

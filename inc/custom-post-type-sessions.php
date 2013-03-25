@@ -24,7 +24,7 @@ function profmg_register_my_sessions() {
       'labels' => $labels,
       'hierarchical' => true,
       'description' => 'New Horizons Sessions',
-      'supports' => array( 'title', 'editor', 'thumbnail', 'comments' ),
+      'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ),
       'taxonomies' => array( 'category', 'post_tag', 'sessions' ),
       'public' => true,
       'show_ui' => true,
@@ -106,6 +106,9 @@ $profmg_session_fields = array(
 	'$session_type'                => 'session_type',
 	'$session_abstract'            => 'session_abstract',
 	'$session_outcome'             => 'session_outcome',
+	'$session_scantron'						 => 'session_scantron',
+	'$session_slideshare'					 => 'session_slideshare',
+
 	'$audience_level_beginner'     => 'audience_level_beginner',
 	'$audience_level_intermediate' => 'audience_level_intermediate',
 	'$audience_level_advanced'     => 'audience_level_advanced',
@@ -124,6 +127,24 @@ function profmg_display_session_meta_box ( $session ){
 	$custom_fields = get_post_custom($session->ID);
 ?>
 	<table>
+		<tr>
+			<td class="session-details-title">Scantron Link: </td>
+			<td>
+				<input type="text" size="70"
+					name="session_scantron"
+					value="<?php if (isset($custom_fields['session_scantron'][0])){echo $custom_fields['session_scantron'][0];} ?>"
+					placeholder="" />
+				</td>
+		</tr>
+		<tr>
+			<td class="session-details-title">Slideshare Embed: </td>
+			<td>
+				<input type="text" size="70"
+					name="session_slideshare"
+					value="<?php if (isset($custom_fields['session_slideshare'][0])){echo $custom_fields['session_slideshare'][0];} ?>"
+					placeholder="" />
+				</td>
+		</tr>
 		<tr>
 			<td class="session-details-title">New Horizons ID: </td>
 			<td>
@@ -735,6 +756,7 @@ function profmg_columns_content($column_name, $post_ID) {
 add_filter( 'manage_edit-sessions_sortable_columns', 'profmg_sortable_columns' );
 function profmg_sortable_columns( $columns ) {
 	$columns['nh_session_id'] = 'nh_session_id';
+	$columns['lead_presenter_lname'] = 'lead_presenter_lname';
 	return $columns;
 }
 
@@ -748,6 +770,10 @@ function profmg_session_id_orderby( $query ) {
 	if( 'nh_session_id' == $orderby ) {
 		$query->set('meta_key','nh_session_id');
 		$query->set('orderby','meta_value_num');
+	}
+	if( 'lead_presenter_lname' == $orderby ) {
+		$query->set('meta_key', 'lead_presenter_lname');
+		$query->set('orderby', 'meta_value');
 	}
 }
 
@@ -818,6 +844,9 @@ function profmg_bulk_delete() {
 	       wp_delete_post( $post->ID, true);
 	   }
 	}
+
+
+
 }
 
 

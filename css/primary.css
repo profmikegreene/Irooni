@@ -215,6 +215,7 @@ a:hover.button {
 	background: -ms-linear-gradient(top,  #a612d1 0%,#a411c1 100%);
 	background: linear-gradient(to bottom,  #a612d1 0%,#a411c1 100%);
 }
+
 /* ==================================================================
 *
 *   Grid System and Layout
@@ -319,7 +320,9 @@ a:hover.button {
 
 /* `Push Space >> 12 Columns
 ----------------------------------------------------------------------------------------------------*/
-
+.container .push_05 {
+	margin-left:50px;
+}
 .container .push_1 {
   left: 80px;
 }

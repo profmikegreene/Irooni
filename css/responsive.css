@@ -232,6 +232,22 @@
     background-position-y: 0;
     /*overflow-x: hidden;*/
   }
+  h1 {
+    font-size: 2.5em;
+    line-height: 2em;
+  }
+  h2 {
+    font-size: 2em;
+    line-height:1.6em;
+  }
+  h3 {
+    font-size: 1.6em;
+    line-height:1em;
+  }
+  h4 {
+    font-size: 1.25em;
+    line-height:1em;
+  }
   .container {
     width:100%;
   }
@@ -337,7 +353,9 @@
   }
   .page-template-conference-home-page-php .feature h1 {
     line-height: 1.25em;
-  }
+    font-size: 2.5em;
+    margin:10px 0;
+   }
   .callToAction {
     margin-top:10px;
   }

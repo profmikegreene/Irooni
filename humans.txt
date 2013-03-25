@@ -3,14 +3,18 @@
 
 
 /* TEAM */
-  Web Solutions Specialist: Michael Greene
+  Michael Greene
   Site: profmikegreene.com
   Twitter: profmikegreene
   Location: Tappahannock, VA
 
+  Dave Morales
+  Site: moral.es
+  Twitter: morales
+  Location: Richmond, VA
 
 /* THANKS */
-  Names (& URL): Dave Morales, Nancy Harris, Jen Switzer, Ruth Greene, Jackie Smith
+  Nan Ottenritter, Nancy Harris, Jen Switzer, Ruth Greene, Jackie Smith
 
 /* SITE */
   Standards: HTML5, CSS3
@@ -22,7 +26,6 @@
     instead of wp_head in order to correctly load after jQuery. **More reliable to just
     load jQuery in head**
 
-  Grab post_id's from all sessions with custom code and use them for qr code generation, they redirect to the appropriate permalink
 
   Create apple-icon.png
 

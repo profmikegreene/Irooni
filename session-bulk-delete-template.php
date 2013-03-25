@@ -1,6 +1,6 @@
 <?php
 
- /*Template Name: Bulk DELETE all sessions
+ /*Template Name: DONT USE DELETE all sessions
 
  */
 

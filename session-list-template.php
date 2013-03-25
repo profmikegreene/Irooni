@@ -35,11 +35,12 @@ get_header(); ?>
                     <option value="Mill Mountain">Mill Mountain</option>
                     <option value="Buck Mountain">Buck Mountain</option>
                     <option value="Brush Mountain">Brush Mountain</option>
-                    <option value="Harrison/Tyler">Harrison/Tyler</option>
+                    <option value="Tinker Mountain">Tinker Mountain</option>
+                    <option value="Harrison / Tyler">Harrison/Tyler</option>
                     <option value="Madison">Madison</option>
                     <option value="Washington">Washington</option>
-                    <option value="Monroe">Monroe</option>
-                    <option value="Wilson">Wilson</option>
+                    <option value="Monroe Computer Lab">Monroe</option>
+                    <option value="Wilson Computer Lab">Wilson</option>
                     <option value="Crystal A">Crystal A</option>
                     <option value="Crystal B">Crystal B</option>
                     <option value="Crystal C">Crystal C</option>
