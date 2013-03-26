@@ -6,17 +6,15 @@
 <!--[if gt IE 9]><!--><html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
 <!-- the "no-js" class is for Modernizr. -->
 
-<head id="newhorizons-vccs-edu" 
-			data-template-set="irooni-theme" 
-			profile="http://gmpg.org/xfn/11">
+<head>
 
 	<meta charset="<?php bloginfo('charset'); ?>">
 	
 	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
 	<?php if (is_search()) { ?>
-	<meta name="robots" content="noindex, nofollow" /> 
+	<meta name="robots" content="noindex, nofollow" />
 	<?php } ?>
 
 	<title>

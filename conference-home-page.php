@@ -16,7 +16,7 @@ get_header(); ?>
 				<h1>Design your agenda now: sessions on personal wellness, retention, engagement, eLearning and more.</h1>
 			</div>
 			<div class="fadeIn">
-				<h1>Discover great teaching through Chickering and Gamson's Seven Principles for Good Practice in Undergraduate Education.</j1>
+				<h1>Discover great teaching through Chickering and Gamson's Seven Principles for Good Practice in Undergraduate Education.</h1>
 			</div>
 			<div class="fadeIn">
 				<h1>Connect with 800 of your colleagues across the state.</h1>
@@ -29,8 +29,7 @@ get_header(); ?>
 			</div>
 		</div>
 		<div class="callToAction grid_4 push_8">
-			<a href="http://www.cvent.com/events/2013-vccs-new-horizons-conference-participant-registration/event-summary-860946d7d77a43efbf9311afe93d5f65.aspx" 
-			   target="_blank" class="green button">Attend NH13</a>
+			<a href="/nh13/" class="green button">NH13 Info</a>
 			<a href="/nh13/agenda/sessions/grid" class="white button">Session Grid</a>
 		</div>
 	</div>
@@ -121,7 +120,7 @@ get_header(); ?>
 		if ($attachments) {
 		    foreach ($attachments as $attachment) {
 		    	$img = wp_get_attachment_image_src($attachment->ID, 'vendor-thumb', false);
-          echo '<img src="'.$img[0].'" />';
+          echo '<img src="'.$img[0].'" alt="Vendor Logo" />';
 		    }
 		}
 ?>
