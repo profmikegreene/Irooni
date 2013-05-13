@@ -58,6 +58,7 @@ get_header(); ?>
 						<?php the_content(); ?>
 					<?php endforeach; ?>
 					<?php wp_reset_query(); ?>
+					<?php dynamic_sidebar( 'homepage-pinterest' ); ?>
 			</div>
 		</div>
 		</div>

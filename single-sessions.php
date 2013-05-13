@@ -30,7 +30,7 @@ get_header(); ?>
 					<p><?php $slideshare = preg_split('/=|&/', $meta['session_slideshare'][0]);
 										echo '
 										<div class="session-embed">
-										<iframe src="http://www.slideshare.net/slideshow/embed_code/' . $slideshare[1] . '"
+										<iframe src="http://www.slideshare.net/slideshow/embed_code/' . $slideshare[1] . '?rel=0"
 										frameborder="0"
 										marginwidth="0"
 										marginheight="0"

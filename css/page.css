@@ -56,6 +56,9 @@ h2.tight {
   font-size: 1.25em;
   line-height: 1.4em;
 }
+.entry-content li li {
+  font-size: 1em;
+}
 .entry-content .callout {
   background:#eee;
   border:2px dashed #ddd;
@@ -319,12 +322,14 @@ h2.tight {
 }
 .session-embed {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
   padding-bottom:75%; /* 4:3 ratio */
   padding-top: 30px; /* IE6 workaround*/
   height: 0;
   overflow: hidden;
   margin-bottom: 1.5em;
+}
+.session-embed.wide {
+  padding-bottom: 56.25%; /* 16:9 ratio */
 }
 .session-embed iframe,
 .session-embed object {

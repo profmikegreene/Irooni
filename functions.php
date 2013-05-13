@@ -101,6 +101,15 @@ if (function_exists('register_sidebar')) {
 	'before_title'  => '<h3>',
 	'after_title'   => '</h3>'
 	));
+	register_sidebar( array(
+	'name' => 'Homepage Pinterest',
+	'id'   => 'homepage-pinterest',
+	'description'   => __( 'This is the #nh13 pin board.','irooni' ),
+	'before_widget' => '<aside id="%1$s" class="widget promo %2$s">',
+	'after_widget'  => '</aside>',
+	'before_title'  => '<h3>',
+	'after_title'   => '</h3>'
+	));
 }
 add_action( 'init', 'register_sidebar' );
 
