@@ -44,12 +44,6 @@ function profmg_register_my_sessions() {
 }
 
 
-if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 150, 150, true );
-    add_image_size( 'session-pic', 260, 160 );
-}
-
 add_action( 'admin_init', 'profmg_create_meta_box' );
 function profmg_create_meta_box() {
 	add_meta_box( 'session_meta_box',

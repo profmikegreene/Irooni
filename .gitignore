@@ -37,6 +37,7 @@ publish
 .idea
 psd
 build
+build-old
 import
 uploads
 

@@ -17,6 +17,14 @@
 *   Feature
 *
 * -----------------------------------------------------------------*/
+.front-and-center {
+	text-align: center;
+}
+.front-and-center a {
+	color:#fff;
+	text-decoration: none;
+	border-color: #fff;
+}
 .feature_and_announcements {
 	background: #fff url(/wp-content/themes/Irooni/images/blurredBkg.jpg) center no-repeat;
 	padding: 60px 0;
